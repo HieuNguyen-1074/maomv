@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+
+body,html{
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   height: 100%;
+   font-family: 'Poppins', sans-serif;
+   background-color: rgba(0,0,0);
+}
+*{
+    color: #ffff;
+}
+.df{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+}
+.mw80{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.top-nav{
+    justify-content: space-between;
+    padding: .5rem 4rem;
+    background-color: black;
+   
+}
+.top-nav *{
+    color: #ffff;
+}
+.logo{
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.logo span{
+    font-size: 2rem;
+    color: rgb(255 ,47 ,0);
+}
+.navbar {
+    margin: 0;
+    padding:0;
+}
+.navbar li{
+    list-style: none;
+    padding: 0 2rem;
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 80%;
+    text-transform: capitalize;
+}
+.navbar a:hover{
+    border-bottom: 1px solid rgba(255, 255, 255,.5);
+}
+.top-nav-right{
+    position: relative;
+}
+.top-nav-right-find{
+}
+.top-nav-right-find-main{
+    font-size: 80%;
+    border-bottom: 1px solid  rgba(255, 255, 255,.5);;
+    border-top: none;
+    padding: .3rem;
+    border-left: none;
+    border-right: none;
+    background: none;
+    outline: none;
+}
+
+/* .top-nav-right-find:hover .top-nav-right-find-main{
+    display: block;
+} */
+.top-nav-right-find-btn{
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+    font-size: 100%;
+    padding: 0;
+    outline: none;
+    position: relative;
+
+}
+i.fas.fa-search {
+    font-size: 80%;
+    margin-right: 0.5rem;
+    color: rgba(255, 255, 255,.5);
+}
+i.fas.fa-search:hover{
+    color: #ffff;
+}
+.top-nav-right-cart{
+    /* padding : 0 1.3rem; */
+    margin: 0 2rem;
+}
+.fa-shopping-cart{
+    font-size: 80%;
+    color: rgba(255, 255, 255,.5);
+}
+.fa-shopping-cart:hover{
+    color: #ffff;
+}
+.top-nav-right-cart-icon sup{
+    border: none;
+    font-size: 60%;
+    display: inline-block;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background-color: #ffff;
+    color: black;
+    font-weight: 900;
+    text-align: center;
+    padding: .06rem;
+}
+.top-nav-right-cart-main{
+    position: fixed;
+    top: 0;
+}
+
+.fa-sign-out-alt{
+    font-size: 100%;
+    color: rgba(255, 255, 255,.5);
+}
+.fa-sign-out-alt:hover{
+    color: #ffff;
+}
+
+/* wrapper */
+.wrapper{
+  position: relative;
+    width: 100%;
+    height: 95%;
+    background-image: url(/public/img/poster/powerProject1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: wrapper 10s ease-in infinite;
+
+}
+@keyframes wrapper{
+    0%,100%{
+        background-image: url(/public/img/poster/powerProject1.jpg);
+    }
+    33%{
+        background-image: url(/public/img/poster/powerProject2.jpg);
+    }
+    69%{
+        background-image: url(/public/img/poster/powerProject3.jpg);
+    }
+}
+.wrapper::before{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 98%);
+}
+.wrapper-container{
+  position: absolute;
+    top: 0;
+    width: 80%;
+    margin: 0 10%;
+    height: 100%;
+}
+.wrapper-container  *{
+    color: #ffff;
+    text-transform: capitalize;
+}
+.wrapper-infor-movie-main h1{
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+.wrapper-infor-movie-main p{
+    font-size: 80%;
+}
+.wrapper-infor-movie-main span{
+    font-size: 90%;
+}
+.wrapper-infor-movie-btn button{
+    border: none;
+    margin: .2rem;
+    padding: 0;
+    border-radius: .5rem;
+    outline: none;
+}
+.wrapper-infor-movie-btn-readmore{
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgb(255, 0, 0);
+    transition: all .6s;
+}
+
+.wrapper-infor-movie-btn-readmore:hover {
+    transform: scale(1.1);
+   
+}
+.wrapper-infor-movie-btn-addcart{
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgb(0, 0, 0);
+    transition: all .6s;
+}
+.wrapper-infor-movie-btn-addcart:hover {
+    transform: scale(1.1);
+   
+}
+.wrapper-infor-movie-btn a{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+   display: block;
+    width: 6rem;
+    padding: .6rem 1.2rem;
+    border: none;
+}
+
+/* new */
+.news-products,.kinhdi-products{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.news-container,.kinhdi-container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.kinhdi-container h1,.news-container h1{
+    text-transform: capitalize;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+ .product{
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+ .product img{
+    display: inline-block;
+    height: 100%;
+}
+.news-products-main,.kinhdi-products-main{
+    transform: translateX(0);
+    transition: all 1s;
+}
+.product-content{
+    background-color: rgba(0, 0, 0,.3);
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    padding: 1rem;
+    box-sizing: border-box;
+    transform: translateY(-100%);
+    transition: all .7s;
+    justify-content: center;
+}
+.product:hover .product-content{
+    transform: translateY(0%);
+}
+.product-content h1{
+    width: 80%;
+    font-size: 80%;
+    text-transform: capitalize;
+    text-align: center;
+}
+@media only screen and (max-width: 460px){
+    .product-content h1{
+        font-size: 60% !important;
+    }
+}
+.product button{
+    padding : .6rem .8rem;
+    margin: .4rem;
+    border: none;
+    border-radius: .6rem;
+    transition: all .3s;
+    outline: none;
+}
+.product button:hover{
+     transform: scale(1.1);
+}
+.product-content-addcart{
+    background-color: rgba(255, 0, 0,.7);
+    
+}
+.product-content-addcart:hover {
+    background-color: rgba(255, 0, 0,1);
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgba(255, 0, 0,1);
+}
+.product-content-readmore{
+    background-color: rgba(0, 0, 0,.7);
+}
+.product-content-readmore:hover{
+    background-color: rgba(0, 0, 0,1);
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgb(0, 0, 0);
+}
+.product button {
+    text-transform: capitalize;
+    font-size: 70%;
+}
+.product button  a{
+    text-decoration: none;
+}
+.news-container > i,.kinhdi-container > i {
+    position: absolute;
+    z-index: 1;
+    padding: .4rem;
+    color: black;
+    top: 50%;
+    background-color: rgba(255, 255, 255,.3);
+
+}
+.fa-arrow-left{
+    left: 0;
+    transform: translateX(-50%);
+}
+.fa-arrow-right{
+    right: 0;
+    transform: translateX(50%);
+}
+
+/* product Main */
+.kinhdi-container{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.kinhdi-products-main h1{
+    font-size: 80%;
+    text-align: center;
+}
+.product-main-container-main{
+    width: 90%;
+}
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+/* .product-main-container-main{
+    width: 100%;
+
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin : 0 auto;
+}
+.product-main-container-main .product{
+    text-transform: capitalize;
+    overflow: hidden;
+    margin: 0.5rem .5rem;
+    max-width: 14%;
+    position: relative;
+    border: none;
+    background: rgb(255, 255, 255);
+    color: black;
+}
+.product-main-container-main .product img{
+    width: 100%;
+    height: auto;
+}
+.product-main-container-main .product .product-content{
+    height: 86%;
+}
+.product-main-container-main .product > h1{
+    font-size: 83%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: black;
+   
+} */
+.dangki{
+    background-image: url(/public/img/poster/powerProject3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 3rem 0;
+    animation: dangki 10s ease-in infinite;
+}
+@keyframes dangki{
+    0%,100%{
+        background-image: url(/public/img/poster/powerProject3.jpg);
+    }
+    33%{
+        background-image: url(/public/img/poster/powerProject2.jpg);
+    }
+    69%{
+        background-image: url(/public/img/poster/powerProject1.jpg);
+    }
+}
+.dangki-container{
+    background-color: rgba(0, 0, 0,.7);
+    flex-direction: column;
+    padding: 4rem 0;
+    text-transform: capitalize;
+}
+.dangki-container button{
+    font-size: 100%;
+    padding: .7rem 1.3rem;
+    border: none;
+    background-color: rgba(255, 111, 0, 0.3);
+    outline: none;
+    cursor: pointer;
+    border-radius : .6rem;
+    transition: all .4s;
+}
+.dangki-container button:hover{
+    transform: scale(1.1);
+    background-color: rgba(255, 111, 0);
+}
+.dangki-container button a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+/* footer */
+.footer-container{
+    padding: 0 2rem;
+    padding-top: 2rem;
+    justify-content: center;
+}
+.footer-container > *{
+    margin: 1rem;
+}
+.footer-container i {
+    font-size: 1.5rem;
+}
+.footer-inforweb {
+    margin: 0;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 80%;
+}
+/* cart */
+.cart{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+
+.cart-container {
+    width: 40%;
+    height: 100%;
+    background: black;
+    float: right;
+    }
+.cart-product{
+    width: 100%;
+    height: 93px;
+    justify-content: space-around;
+    text-transform: capitalize;
+}
+.cart-product img{
+    width: auto;
+    height: 100%;
+}
+.cart-product-main h1{
+   font-size: 1.1rem;
+
+}
+.cart-product-main p{
+    font-size: .8rem;
+ 
+ }
+ .cart-product-quanlity p{
+     margin: 0;
+ }
+ .cart-product-quanlity i {
+     cursor: pointer;
+ }
+ .sum{
+     text-align: center;
+ }

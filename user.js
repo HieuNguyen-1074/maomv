@@ -3,8 +3,8 @@ class User{
       this.name = "s"
     }
     async getUsers(){
-         let users = await fetch("/db.json");
-         users = users.json();
+         let user = await fetch("/db.json");
+          var users = user.json();
          return users;
     }
 }

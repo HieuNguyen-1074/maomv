@@ -23,7 +23,6 @@ import User from '../../user.js';
     
  }
 function checkUsers(users){
-    console.log(users)
    const elementInputUserName = document.getElementById('login-form-username');
    const elementInputUserPassword = document.getElementById('login-form-password');
    const elementUserAlert = document.querySelector('.login-alert-user');
@@ -74,13 +73,14 @@ function checkUsers(users){
        else{
         elementPasswordAlert.innerHTML = '';
         elementUserAlert.innerHTML = '';
-        document.cookie = `name=${s.name}`
-        elementLoginForm.setAttribute("action","/")
+        Cookies.set('name', `${s.name}`);
+        elementLoginForm.setAttribute("action","/src/productshop/shop.html");
        }
   })
    
 }
 function main(){
+  
     var users = new User();
     users.getUsers().then((data)=>{
      var users = data.user;

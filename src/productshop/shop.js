@@ -27,9 +27,8 @@ const cart = new Cart();
                 <h1>${product.name}</h1>
                 <button class="product-content-addcart" data-id ="${product.id}">add to cart
              </button>
-             <button class="product-content-readmore" data-id="${product.id}"><a href="#">
+             <button class="product-content-readmore" data-id="${product.id}">
                 read more
-               </a>
             </button>
             </div>
 
@@ -39,12 +38,12 @@ const cart = new Cart();
              elementProductMain += ` <div class="product">
              <img src="${product.src}" alt="" class="product-img">
              <div class="product-content df">
-             <p> ${product.price}/1</p>
+             <p> $${product.price}/1</p>
                  <button class="product-content-addcart" data-id ="${product.id}">add to cart
               </button>
-              <button class="product-content-readmore" data-id="${product.id}"><a href="#">
+              <button class="product-content-readmore" data-id="${product.id}">
                  read more
-                </a>
+         
              </button>
              </div>
              <h1>${product.name}</h1>
@@ -102,29 +101,29 @@ const cart = new Cart();
 
     
      let widthScreen = document.body.clientWidth;
+    console.log(widthScreen)
 
-
-     if(widthScreen <950 && widthScreen>808){
+     if(widthScreen <=1153 && widthScreen>870){
         numberPageNewsProductDsiplay(6,elementNewsContainer,elementNewsProducts,elementNewsProductsMain);
         numberPageNewsProductDsiplay(6,elementKinhDiContainer,elementKinhDiProducts,elementKinhDiProductsMain);
      }
-     else if(widthScreen < 808 && widthScreen>665){
+     else if(widthScreen <= 870 && widthScreen > 723){
         numberPageNewsProductDsiplay(5,elementNewsContainer,elementNewsProducts,elementNewsProductsMain);
         numberPageNewsProductDsiplay(5,elementKinhDiContainer,elementKinhDiProducts,elementKinhDiProductsMain);
      }
-     else if(widthScreen < 665 && widthScreen>535){
+     else if(widthScreen <=  723 && widthScreen>584){
         numberPageNewsProductDsiplay(4,elementNewsContainer,elementNewsProducts,elementNewsProductsMain);
         numberPageNewsProductDsiplay(4,elementKinhDiContainer,elementKinhDiProducts,elementKinhDiProductsMain);
      }
-     else if(widthScreen < 535 && widthScreen>405){
+     else if(widthScreen <= 584 && widthScreen>438){
         numberPageNewsProductDsiplay(3,elementNewsContainer,elementNewsProducts,elementNewsProductsMain);
         numberPageNewsProductDsiplay(3,elementKinhDiContainer,elementKinhDiProducts,elementKinhDiProductsMain);
      }
-     else if(widthScreen < 405 && widthScreen>271){
+     else if(widthScreen <= 438 && widthScreen>305){
         numberPageNewsProductDsiplay(2,elementNewsContainer,elementNewsProducts,elementNewsProductsMain);
         numberPageNewsProductDsiplay(2,elementKinhDiContainer,elementKinhDiProducts,elementKinhDiProductsMain);
      }
-     else if(widthScreen < 271){
+     else if(widthScreen <= 305){
         numberPageNewsProductDsiplay(1,elementNewsContainer,elementNewsProducts,elementNewsProductsMain);
         numberPageNewsProductDsiplay(1,elementKinhDiContainer,elementKinhDiProducts,elementKinhDiProductsMain);
      }
@@ -136,54 +135,165 @@ const cart = new Cart();
  function displayCarts(){
    let carts = cart.getCart();
    const elementCartsProduct = document.querySelector('.cart-products');
+   const elementCartsSum = document.querySelector('.sum');
+   const  elementSupQuanlityCart = document.getElementById('top-nav-quanlity-cart');
+  
 
-
-   console.log(carts);
+   let sumMoney  = 0 ;
+   let quanlity = 0;
    let elementCart= '';
    carts.forEach( cart => {
+      // quanlity+= cart.quanlity;
+      sumMoney += cart.price;
        elementCart += `
                       <div class="cart-product df">
                         <img src="${cart.src}" alt="">
                         <div class="cart-product-main">
                             <h1>${cart.name}</h1>
-                            <p>${cart.price}</p>
+                            <p>$${cart.price}</p>
+                            <button data-id="${cart.id}" class="cart-product-btn"> remove </button>
                         </div>
                         <div class="cart-product-quanlity">
-                            <i class="fas fa-sort-up"  title="cart-up" ></i>
+                            <i class="fas fa-sort-up"  title="cart-up" data-id="${cart.id}"></i>
                             <p>${cart.quanlity}</p>
-                            <i class="fas fa-sort-down" title="cart-down"></i>
+                            <i class="fas fa-sort-down" title="cart-down" data-id="${cart.id}"></i>
                         </div>
                     </div> `;
    });
     elementCartsProduct.innerHTML = elementCart;
+    if(sumMoney=== 0){
+      elementCartsSum.innerHTML = `nothing here`;
+    }
+    else{
+    elementCartsSum.innerHTML = `$${sumMoney}`;
+    }
+    elementSupQuanlityCart.innerHTML =  carts.length;
+    
+
+}
+function removeCart(btns){
+     let allBtns = document.querySelector('.cart-products');
+
+    
+    
+     allBtns.addEventListener('click',(e)=>{
+      let carts = cart.getCart();
+        console.log(e);
+         let valueType = e.target.localName;
+         let dataId = e.target.dataset.id;
+         if(valueType ==='button'){
+           
+           carts = carts.filter((cart)=>{
+              
+               return cart.id != dataId;
+           })
+           
+           localStorage.setItem('cart',JSON.stringify(carts));
+           displayCarts();
+         }
+         // button quanlity
+         if(valueType === 'i'){
+            let valueTitle = e.target.title;
+            if(valueTitle === 'cart-up'){
+               carts = carts.map((cart)=>{
+                  
+                 if(cart.id === dataId){
+                    let quanlity = cart.quanlity;
+                    return {...cart,quanlity :  ++quanlity};
+
+                 }
+                 else{
+                    return cart;
+                 }
+                 
+               })
+            }
+               else if(valueTitle === 'cart-down'){
+                  carts = carts.map((cart)=>{
+                    if(cart.id === dataId){
+                       let quanlity = cart.quanlity;
+                       return {...cart,quanlity :  --quanlity};
+   
+                    }
+                    else{
+                       return cart;
+                    }
+                    
+                  })
+                  carts = carts.filter((cart)=>{
+                     return cart.quanlity != 0;
+                  })
+            }
+
+         }
+         localStorage.setItem("cart", JSON.stringify(carts));
+         displayCarts();
+     })
+}
+    function displayReadMore(){
+        
+   }
+function readMore(products){
+   const allReadMoreBtn = document.querySelectorAll('.product-content-readmore');
+   const elementInforMore = document.querySelector('.infor-movie-more-main');
+   let displayElementInforMore = '';
+   allReadMoreBtn.forEach((btn)=>{
+      console.log(products);
+      btn.addEventListener('click',(e)=>{
+         let dataId = e.target.dataset.id;
+         products.forEach((product)=>{
+            if(product.id === dataId){
+            
+               displayElementInforMore = `<h1>${product.name}</h1>
+               <p class="infor-movie-more-main-director">director : ${product.infor.director}</p>
+               <p class="infor-movie-more-main-year">years : ${product.infor.year}</p>
+               <p class="infor-movie-more-main-company">company : ${product.infor.company}</p>
+               <p class="infor-movie-more-main-content">
+               ${product.infor.content}
+               </p>`
+            }
+         })
+         elementInforMore.innerHTML = displayElementInforMore;
+      })
+   })
+
 }
  function  addToCart(products){
     let carts = cart.getCart();
     let newCart ;
     const allAddToCartBtn = document.querySelectorAll('.product-content-addcart');
-    console.log(carts);
-    allAddToCartBtn.forEach( btn => {
+       allAddToCartBtn.forEach( btn => {
        btn.addEventListener('click',(e)=>{
          let dataIdBtn = e.target.dataset.id;
          newCart = products.filter((product)=>{
             return product.id === dataIdBtn;
          })
+         
         
          newCart = newCart[0];
-         console.log(newCart);
          newCart = {
             name : newCart.name,
             id : newCart.id,
-            price : newCart.price,
+            price : parseFloat(newCart.price),
             src : newCart.src,
             quanlity : 1
 
          }
-         if(carts.indexOf(newCart)=== -1){
-            console.log(newCart);
+         let checkIndex = 1;
+         carts.forEach( cart => {
+            if(cart.id === newCart.id){
+               checkIndex ++;
+            }
+            else{
+
+            }
+         });
+         if(checkIndex === 1){
             carts.push(newCart);
             localStorage.setItem('cart',JSON.stringify(carts));
             displayCarts();
+            const  elementCartBtnsRemove = document.querySelectorAll('.cart-product-btn');
+        
          }
          else{
          }
@@ -193,7 +303,21 @@ const cart = new Cart();
     });
 
  }
-
+  function displayElementCart(){
+   const elementCartBtnClose = document.getElementById('close-cart');
+   const elementCartsBtn = document.querySelector('.fa-shopping-cart');
+   const elementCartsContainer = document.querySelector('.cart-container');
+   const elementCarts = document.querySelector('.cart');
+   elementCartsBtn.addEventListener('click',()=>{
+      
+      elementCarts.classList.add('cart-act');
+})
+   elementCartBtnClose.addEventListener('click',()=>{
+      elementCarts.classList.remove('cart-act');
+        
+         
+   })
+  }
 function main(){
     // if(!Cookies.get('name')){
     //     window.location.replace("/src/home/home.html");
@@ -201,7 +325,6 @@ function main(){
    
 
    
-    console.log(cart.getCart())
     
     products.getProducts().then((data)=>{
        var  products =data.products;
@@ -210,8 +333,11 @@ function main(){
        localStorage.setItem('cart','[]');
        addToCart(products);
        displayCarts();
+       
+       displayElementCart();
+       removeCart();
+       readMore(products);
     })
-   
 }
 
 main();

@@ -116,7 +116,7 @@ i.fas.fa-search:hover{
     color: black;
     font-weight: 900;
     text-align: center;
-    padding: .06rem;
+    padding: .15rem;
 }
 .top-nav-right-cart-main{
     position: fixed;
@@ -441,39 +441,82 @@ background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0) 0%, rgba
     padding-bottom: 1rem;
     text-align: center;
     font-size: 80%;
+    text-transform: capitalize;
 }
 /* cart */
 .cart{
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 10000;
+    z-index: -10000;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out;
+    
 }
-
-.cart-container {
-    width: 40%;
-    height: 100%;
-    background: black;
+.cart-act{
+    z-index: 10000;
+    transition: all 1s;
+    transform: translateX(0%);
+}
+i#close-cart {
     float: right;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+}
+.cart-container {
+    width: 30%;
+    height: 100%;
+    background: rgba(0, 0, 0,.8);
+    float: right;
+    position: relative;
+  
+    }
+    .cart-container-act{
+  
+    }
+ .cart-products{
+      padding : 0 2rem;
     }
 .cart-product{
     width: 100%;
     height: 93px;
-    justify-content: space-around;
+    margin-top: .5rem;
+    justify-content: space-between;
     text-transform: capitalize;
 }
 .cart-product img{
     width: auto;
     height: 100%;
 }
+.cart-product-main{
+    padding-left: 1rem;
+    flex: 1;
+}
 .cart-product-main h1{
-   font-size: 1.1rem;
+   font-size: .7rem;
+   margin: 0;
 
 }
 .cart-product-main p{
     font-size: .8rem;
  
  }
+ .sum{
+     text-transform: capitalize;
+ }
+ .cart-product-main button {
+    font-size: 80%;
+    padding: 0.3rem .6rem;
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: rgba(255,0,0 ,.6);
+}
+.cart-product-main button:hover{
+    background-color: rgba(255,0,0 );
+}
  .cart-product-quanlity p{
      margin: 0;
  }
@@ -483,3 +526,42 @@ background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0) 0%, rgba
  .sum{
      text-align: center;
  }
+/* infor more */
+.infor-movie-more{
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,.7);
+    z-index: 10000000;
+    opacity: 1;
+}
+.infor-movie-more-act{
+    z-index: 1000000;
+    opacity: 1;
+}
+.infor-movie-more-container{
+    background-image: url(/public/img/poster/poster.1br.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 1);
+    width: 38%;
+    height: 77%;
+    box-shadow: 0.2rem 0.2rem 8rem -4rem #ffff;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.infor-movie-more-main{
+    padding: 2.5rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0,.7);
+    text-transform: capitalize;
+}
+.infor-movie-more-main h1{
+    font-size: 1.2rem;
+}
+.infor-movie-more-main p{
+    font-size: .9rem;
+}

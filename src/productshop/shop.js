@@ -144,7 +144,7 @@ const cart = new Cart();
    let elementCart= '';
    carts.forEach( cart => {
       // quanlity+= cart.quanlity;
-      sumMoney += cart.price;
+      sumMoney +=( cart.price*cart.quanlity);
        elementCart += `
                       <div class="cart-product df">
                         <img src="${cart.src}" alt="">
@@ -159,8 +159,10 @@ const cart = new Cart();
                             <i class="fas fa-sort-down" title="cart-down" data-id="${cart.id}"></i>
                         </div>
                     </div> `;
+                   
    });
     elementCartsProduct.innerHTML = elementCart;
+    
     if(sumMoney=== 0){
       elementCartsSum.innerHTML = `nothing here`;
     }
@@ -168,7 +170,6 @@ const cart = new Cart();
     elementCartsSum.innerHTML = `$${sumMoney}`;
     }
     elementSupQuanlityCart.innerHTML =  carts.length;
-    
 
 }
 function removeCart(btns){
@@ -231,32 +232,48 @@ function removeCart(btns){
      })
 }
     function displayReadMore(){
-        
+      let elementInforMoreBtnClose = document.getElementById('close-infor-more');
+      const elementInforMore = document.querySelector('.infor-movie-more');
+      console.log(elementInforMoreBtnClose)
+      elementInforMoreBtnClose.onclick =()=>{
+         elementInforMore.classList.remove('infor-movie-more-act');
+      }
    }
 function readMore(products){
    const allReadMoreBtn = document.querySelectorAll('.product-content-readmore');
-   const elementInforMore = document.querySelector('.infor-movie-more-main');
+   const elementInforMoreMain = document.querySelector('.infor-movie-more-main');
    let displayElementInforMore = '';
    allReadMoreBtn.forEach((btn)=>{
+     
       console.log(products);
       btn.addEventListener('click',(e)=>{
+         
          let dataId = e.target.dataset.id;
          products.forEach((product)=>{
+            console.log(product)
             if(product.id === dataId){
-            
-               displayElementInforMore = `<h1>${product.name}</h1>
+               const elementInforMoreContainer = document.querySelector('.infor-movie-more-container');
+               displayElementInforMore = `
+               
+               <h1>${product.name}</h1>
                <p class="infor-movie-more-main-director">director : ${product.infor.director}</p>
                <p class="infor-movie-more-main-year">years : ${product.infor.year}</p>
                <p class="infor-movie-more-main-company">company : ${product.infor.company}</p>
                <p class="infor-movie-more-main-content">
                ${product.infor.content}
                </p>`
+               elementInforMoreContainer.style.backgoundImage = `url(${product.src})`;
             }
          })
-         elementInforMore.innerHTML = displayElementInforMore;
+         elementInforMoreMain.innerHTML = displayElementInforMore;
+         const elementInforMore = document.querySelector('.infor-movie-more');
+      
+         elementInforMore.classList.add('infor-movie-more-act');
+         
       })
+      
    })
-
+   
 }
  function  addToCart(products){
     let carts = cart.getCart();
@@ -292,7 +309,6 @@ function readMore(products){
             carts.push(newCart);
             localStorage.setItem('cart',JSON.stringify(carts));
             displayCarts();
-            const  elementCartBtnsRemove = document.querySelectorAll('.cart-product-btn');
         
          }
          else{
@@ -318,13 +334,23 @@ function readMore(products){
          
    })
   }
+  function displayNavbar(){
+     const elementTopNavCenter = document.querySelector('.top-nav-center')
+     const elementTopNavCenterBtn =  elementTopNavCenter.querySelector('.fa-bars');
+
+     elementTopNavCenterBtn.onclick = ()=>{
+        elementTopNavCenterBtn.classList.toggle('fa-times');
+        elementTopNavCenter.classList.toggle('top-nav-center-act');
+
+     }
+  }
 function main(){
-    // if(!Cookies.get('name')){
-    //     window.location.replace("/src/home/home.html");
-    // }
+    if(!Cookies.get('name')){
+        window.location.replace("/src/home/home.html");
+    }
    
 
-   
+   else{
     
     products.getProducts().then((data)=>{
        var  products =data.products;
@@ -337,7 +363,11 @@ function main(){
        displayElementCart();
        removeCart();
        readMore(products);
+      
     })
+    displayReadMore();
+    displayNavbar();
+   }
 }
 
 main();

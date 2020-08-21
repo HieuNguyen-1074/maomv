@@ -105,7 +105,7 @@
                     "Phim chiếu rạp",
                     "Phim lẻ"
                      ],
-                 "copany" : "Orion Pictures, BRON Studios, Automatik",
+                 "company" : "Orion Pictures, BRON Studios, Automatik",
                  "content" : "Vì hoàn cảnh gia đình, hai chị em Gretel (Sophia Lillis) và Hansel (Sam Leakey) bị mẹ đuổi ra khỏi nhà. Họ lạc vào một khu rừng tối tăm và gặp một bà cụ kỳ lạ Holda (Alice Krige).Hai chị em cứ ngỡ lọt vào chốn thiên đường khi có miếng ăn mỗi ngày, trong khi chỉ phải giúp bà cụ thực hiện vài công việc lặt vặt. Hóa ra, đó là một mụ phù thủy chuyên ăn thịt trẻ con. Nguy hiểm bao vây, hai chị em Gretel phải làm thế nào để sống sót?"
             },
             "src" : "/public/img/poster/poster.gretelandhansel.jpg",
@@ -124,7 +124,7 @@
                     "Phim tâm lý", 
                     "Phim lẻ"
                      ],
-                 "copany" : "Clean Slate Film",
+                 "company" : "Clean Slate Film",
                  "content" : "Lấy bối cảnh tại Bengal vào năm 1881, nội dung phim xoay quanh cô dâu nhỏ tuổi lớn lên và trở thành người phụ nữ bí ẩn quán xuyến việc nhà, chôn sâu quá khứ khổ đau khi các án mạng siêu nhiên cướp đi tính mạng của đàn ông trong làng."
             },
             "src" : "/public/img/poster/poster.bulbbul.jpg",
@@ -143,7 +143,7 @@
                     "Phim Bí ẩn-Siêu nhiên",
                     " Phim lẻ"
                      ],
-                 "copany" : "Herrick Entertainment, Mandalay Vision, Plum Pictures",
+                 "company" : "Herrick Entertainment, Mandalay Vision, Plum Pictures",
                  "content" : "Việc mất điện trên toàn thế giới một cách bí ẩn đã xóa sổ gần như toàn bộ dân số thế giới, để lại quần áo và vật dụng của họ. Khi ngày càng có nhiều người biến mất, những người còn sống sót hợp lực với nhau tại phố thứ 7 ở Detroit, Michigan để chống lại một mối đe dọa chưa từng có. Nhận ra rằng họ có thể là những người duy nhất còn tồn tại trên Trái đất, bóng tối bắt đầu tách từng người một để bủa vây và xâm chiếm họ. Khi tình hình trở nên tồi tệ hơn, họ biết chắc một điều rằng, có một nguồn ánh sáng nhỏ nhoi sẽ giúp họ được an toàn."
             },
             "src" : "/public/img/poster/poster.Vanishing.jpg",
@@ -161,7 +161,7 @@
                     "pphim chiếu rạp", 
                     "Phim lẻ"
                      ],
-                 "copany" : "Bottom Line Entertainment, FLF Films, Parkside Pictures",
+                 "company" : "Bottom Line Entertainment, FLF Films, Parkside Pictures",
                  "content" : "Bộ phim Shark Lake là câu chuyện xoay quanh loài cá mập trắng bất ngờ xuất hiện tại vùng biển xưa nay rất đỗi êm đềm, khiến biết bao người dân nơi đây phải khiếp sợ. Một đội săn cá mập nhanh chóng được thành lập, nhưng dường như họ không chỉ phải đối mặt với những con quái vật dưới biển sâu..."
             },
             "src" : "/public/img/poster/poster.shanklake.jpg",
@@ -178,7 +178,7 @@
                      " Phim kinh dị",
                      "Phi lẻ"
                      ],
-                 "copany" : "Cailleach Productions",
+                 "company" : "Cailleach Productions",
                  "content" : "Một cậu bé tuổi teen vật lộn với cuộc ly hôn sắp xảy ra của cha mẹ mình đồng thời phải đối mặt với một phù thủy nghìn năm tuổi, sống giả dạng dưới lớp da người ngay bên cạnh nhà mình."
             },
             "src" : "/public/img/poster/poster.thewretched.jpg",
@@ -190,13 +190,13 @@
             "infor" : {
                  "country" : "mỹ",
                  "director" : "Roman Polanski",
-                 "year" : "1968968",
+                 "year" : "1968",
                  "kinds" : [
                     "Phim kinh dị", 
                     "Phim chính kịch - Drama", 
                     "Phim lẻ"
                      ],
-                 "copany" : "William Castle Productions",
+                 "company" : "William Castle Productions",
                  "content" : "Cô rất vui mừng khi biết mình có thai. Nhưng khi bụng ngày càng lớn, cô càng tin chắc rằng đứa con chưa chào đời đang gặp nguy hiểm khôn cùng."
             },
             "src" : "/public/img/poster/poster.rpsemary'sbaby.jpg",
@@ -208,14 +208,14 @@
             "infor" : {
                  "country" : "mỹ",
                  "director" : "David Marmor",
-                 "year" : "201919",
+                 "year" : "2019",
                  "kinds" : [
                     "Phim kinh dị", 
                     "Phim hồi hộp-Gây cấn", 
                     "Phim chính kịch - Drama", 
                     "Phim lẻ"
                      ],
-                 "copany" : "1BR Movie, Epicenter, Malevolent FIlms",
+                 "company" : "1BR Movie, Epicenter, Malevolent FIlms",
                  "content" : "Cô gái trẻ Sarah quyết định bắt đầu một cuộc sống mới ở LA, nhưng những người hàng xóm trong khu phức hợp không đơn giản như cô nghĩ."
             },
             "src" : "/public/img/poster/poster.1br.jpg",
@@ -235,7 +235,7 @@
                     "Phim chiếu rạp", 
                     "Phim lẻ"
                      ],
-                 "copany" : "chưa rõ",
+                 "company" : "chưa rõ",
                  "content" : "Bộ phim xoay quanh câu chuyện của nữ nghị sĩ Joo Sang Sook với khả năng nói dối “như cơm bữa”, nhờ đó bà gặt hái được rất nhiều thành công trong sự nghiệp chính trị. Đột nhiên một ngày nọ, bà Joo không thể nói dối được nữa. Sự việc trở nên hết sức nguy cấp khi ngày tranh cử đã gần kề, liệu Joo Sang Sook có thành công đắc cử lần thứ tư hay không khi mọi lời bà nói ra đều là sự thật nghiệt ngã?"
             },
             "src" : "/public/img/poster/poster.honcan.jpg",
@@ -252,7 +252,7 @@
                     "Phim hài hước", 
                     "Phim tình cảmLãng mạn" 
                      ],
-                 "copany" : "Burnt Onion Productions",
+                 "company" : "Burnt Onion Productions",
                  "content" : "Cô bạn thân tự do tự tại giục cô tận hưởng tháng ngày độc thân, nhưng chuyên gia mạng xã hội khao khát sự gắn bó này không thể ngừng theo dõi cuộc sống của tình cũ."
             },
             "src" : "/public/img/poster/poster.seriously-single.jpg",
@@ -292,7 +292,7 @@
                     " Phim hoạt hình", 
                      "Phim lẻ"
                      ],
-                 "copany" : "Blue Dream Studios, Blue Dream Studios Spain, Beijing Wen Hua Dong Run Investmen",
+                 "company" : "Blue Dream Studios, Blue Dream Studios Spain, Beijing Wen Hua Dong Run Investmen",
                  "content" : "Bánh quy hình động vật đầy mê hoặc biến Owen thành bất kỳ dạng hình nào anh ăn! Nhưng để cứu gánh xiếc của gia đình, anh sẽ phải giữ chúng tránh xa người chú độc ác."
             },
             "src" : "/public/img/poster/poster.animail-crackers.jpg",
@@ -312,7 +312,7 @@
                    "Phim chiếu rạp", 
                     "Phim lẻ"
                      ],
-                 "copany" : "Emmett/Furla/Oasis Films (EFO Films), SSS Entertainment, SSS Film Capital",
+                 "company" : "Emmett/Furla/Oasis Films (EFO Films), SSS Entertainment, SSS Film Capital",
                  "content" : "Đêm sống còn Những tên cướp đang bị thương và chạy trốn khỏi sự săn lùng của cảnh sát. Để tránh bị bắt, chúng không vào bệnh viện mà chọn cách theo chân một bác sĩ về nhà riêng để ép buộc bác sĩ đó chữa trị cho chúng. Sau khi đột nhập vào nhà, chúng đã bắt trói và uy hiếp cả gia đình."
             },
             "src" : "/public/img/poster/poster.survivethenight.jpg",
@@ -331,7 +331,7 @@
                   "Phim thuyết minh", 
                     "Phim lẻ"
                      ],
-                 "copany" : "chưa rõ",
+                 "company" : "chưa rõ",
                  "content" : "Năm 1728, vua Yeong Jo năm thứ 4. Từ chức Tư chính của Nội cấm vệ bị giáng chức xuống thành Bổ tốt của Nghĩa cấm phủ chính là đệ nhất kiếm thủ ở Joseon Kim Ho (Jung Hae In) đã biết được sự việc tên phản nghịch Lee In Jwa (Kim Ji Hoon) cùng với các võ sĩ của Ngự doanh sảnh nước láng giềng, những kẻ muốn lật đổ ngai vua bàn tính việc mưu phản. Tuy nhiên, bên trong cung điện lại đầy rẫy những gian thần, Kim Ho đã quyết định một mình đối mặt với lũ phản nghịch ấy và ra sức bảo vệ nhà vua.... Cuộc chạm trán cuối cùng trong lịch sự nhưng không được ghi chép lại cứ như vậy mà nổ ra!"
             },
             "src" : "/public/img/poster/poster.theageogblood.jpg",
@@ -350,7 +350,7 @@
                     "Phim chính kịch - Drama", 
                     "Phim chiếu rạp"
                      ],
-                 "copany" : "De Warrenne Pictures, De Warrenne Pictures",
+                 "company" : "De Warrenne Pictures, De Warrenne Pictures",
                  "content" : "Chiến dịch phi thường giải cứu đội bóng nhí Thái Lan Lợn Hoang chấn động cả Thế giới mùa hè năm 2018. 18 thợ lặn nòng cốt đã vượt qua hành trình tử thần hơn 10km để làm nên kỳ tích - cứu sống 12 cầu thủ nhí sau 10 ngày mắc kẹt trong bóng tối, không thức ăn, không nước sạch."
             },
             "src" : "/public/img/poster/poster.thecave.jpg",
@@ -370,7 +370,7 @@
                     "Phim chiếu rạp", 
                     "Phim lẻ"
                      ],
-                 "copany" : "Miscellaneous Entertainment",
+                 "company" : "Miscellaneous Entertainment",
                  "content" : "Năm người lính Mỹ được giao nhiệm vụ canh giữ một dinh thự tại Pháp trong những năm cuối Thế chiến II. Họ rơi vào tình trạng hoảng loạn khi gặp phải một kẻ thù còn đáng sợ hơn rất nhiều những gì họ từng trải qua trên chiến trường."
             },
             "src" : "/public/img/poster/poster.thegosts.jpg",
@@ -389,7 +389,7 @@
                     "Phim thuyết minh",
                     "Phim lẻ"
                      ],
-                 "copany" : "chưa rõ",
+                 "company" : "chưa rõ",
                  "content" : "Trong phần tiếp theo này của loạt phim đình đám, Chuck trở về nhà và kể với một phóng viên về cuộc sống trên đảo với những người bạn ấu trùng kỳ quặc Đỏ và Vàng."
 
             },

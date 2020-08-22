@@ -722,3 +722,18 @@ i#close-cart {
     padding: 1rem;
     font-size: 1.7rem;
 }
+@media only screen and (max-width:835px){
+    .infor-movie-more-container{
+        width: 50%;
+    }
+}
+@media only screen and (max-width:570px){
+    .infor-movie-more-container{
+        width: 70%;
+    }
+}
+@media only screen and (max-width:370px){
+    .infor-movie-more-container{
+        width: 90%;
+    }
+}

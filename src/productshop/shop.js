@@ -1,5 +1,5 @@
 import Product from '../../product.js';
-import Cart from "/../../cart.js"
+import Cart from '/../../cart.js';
 
 const products = new Product();
 const cart = new Cart();

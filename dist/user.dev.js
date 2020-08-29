@@ -29,7 +29,7 @@ function () {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return regeneratorRuntime.awrap(fetch('./db.json'));
+              return regeneratorRuntime.awrap(fetch('db.json'));
 
             case 2:
               user = _context.sent;

@@ -361,12 +361,12 @@ function readMore(products){
     const elementBtnLogOut =  document.querySelector('.fa-sign-out-alt');
      elementBtnLogOut.onclick = ()=>{
       Cookies.remove('name');
-      window.location.replace("/src/home/home.html");
+      window.location.replace("../../src/home/home.html");
      }
   }
 function main(){
     if(!Cookies.get('name')){
-        window.location.replace("/src/home/home.html");
+        window.location.replace("../../src/home/home.html");
     }
    
 

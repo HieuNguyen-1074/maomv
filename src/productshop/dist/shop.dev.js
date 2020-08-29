@@ -290,13 +290,13 @@ function logOut() {
 
   elementBtnLogOut.onclick = function () {
     Cookies.remove('name');
-    window.location.replace("/src/home/home.html");
+    window.location.replace("../../src/home/home.html");
   };
 }
 
 function main() {
   if (!Cookies.get('name')) {
-    window.location.replace("/src/home/home.html");
+    window.location.replace("../../src/home/home.html");
   } else {
     products.getProducts().then(function (data) {
       var products = data.products;

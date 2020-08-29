@@ -69,26 +69,47 @@ const cart = new Cart();
             img.style.width =` ${(widthElementNewsProducts/number)}px`;
         });
         elementNewProductBtnRight.addEventListener('click',()=>{
-            if(count > (parseInt(allElementNewsProductImg.length-1)/number)) {
-    
-            }
-            else{
-    
-            let styleTransform =Math.abs(parseFloat(window.getComputedStyle(productMain).transform.split("(")[1].split(',')[4]));
-            productMain.style.transform = `translateX(-${widthElementNewsProducts*count}px)`;
+           console.log(allElementNewsProductImg.length)
+           var x = Math.ceil((allElementNewsProductImg.length)/number);
+          if(count === x-1) {
+             if(count%2===0){
+               productMain.style.transform = `translateX(-${changeWidthElementToNumber(productMain) - widthElementNewsProducts*(count-1) }px)`;
+               count++;
+             }
+             else{
+               productMain.style.transform = `translateX(-${changeWidthElementToNumber(productMain) - widthElementNewsProducts*(count) }px)`;
+               count++;
+             }
+               
+          }
+          else if (count === x){
+             console.log(count)
+          }
+         //  else if(allElementNewsProductImg.length===8){
+         //     console.log('s')
+         //  }
+          else{
+            productMain.style.transform = `translateX(-${ widthElementNewsProducts*count }px)`;
             count++;
-            }
+          }
+          console.log(count)
         })
         elementNewProductBtnLeft.addEventListener('click',()=>{
+         let styleTransform = Math.abs(parseFloat(window.getComputedStyle(productMain).transform.split("(")[1].split(',')[4]));
             if(count === 1 ){
             }
+            else if(count > 2){
+              
+               productMain.style.transform = `translateX(${widthElementNewsProducts-styleTransform}px)`;
+               count--;
+            }
             else{
-            let styleTransform = Math.abs(parseFloat(window.getComputedStyle(productMain).transform.split("(")[1].split(',')[4]));
-            productMain.style.transform = `translateX(${widthElementNewsProducts-styleTransform}px)`;
-            count--;
+               console.log('s')
+               productMain.style.transform = `translateX(${0}px)`;
             }
         })
     }
+
 
  function pageNewsProductDsiplay(){
     const elementNewsContainer = document.querySelector('.news-container');
@@ -245,7 +266,6 @@ function readMore(products){
    let displayElementInforMore = '';
    allReadMoreBtn.forEach((btn)=>{
      
-      console.log(products);
       btn.addEventListener('click',(e)=>{
          
          let dataId = e.target.dataset.id;
@@ -361,7 +381,9 @@ function main(){
     
     products.getProducts().then((data)=>{
        var  products =data.products;
+
        productStyle(products);
+      
        pageNewsProductDsiplay();
        localStorage.setItem('cart','[]');
        addToCart(products);
@@ -370,11 +392,16 @@ function main(){
        displayElementCart();
        removeCart();
        readMore(products);
+
+       window.onresize =()=>{
+        pageNewsProductDsiplay();
+       }
       
     })
     displayReadMore();
     displayNavbar();
     logOut();
+
    }
 }
 

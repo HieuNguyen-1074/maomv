@@ -2,8 +2,6 @@
 
 var _product = _interopRequireDefault(require("../../product.js"));
 
-var _cart = _interopRequireDefault(require("/../../cart.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -12,8 +10,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var cart = JSON.parse(localStorage.getItem('cart'));
 var products = new _product["default"]();
-var cart = new _cart["default"]();
 
 function changeWidthElementToNumber(element) {
   var width;
@@ -127,7 +125,7 @@ function pageNewsProductDsiplay() {
 }
 
 function displayCarts() {
-  var carts = cart.getCart();
+  var carts = JSON.parse(localStorage.getItem('cart'));
   var elementCartsProduct = document.querySelector('.cart-products');
   var elementCartsSum = document.querySelector('.sum');
   var elementSupQuanlityCart = document.getElementById('top-nav-quanlity-cart');
@@ -153,7 +151,7 @@ function displayCarts() {
 function removeCart(btns) {
   var allBtns = document.querySelector('.cart-products');
   allBtns.addEventListener('click', function (e) {
-    var carts = cart.getCart();
+    var carts = JSON.parse(localStorage.getItem('cart'));
     console.log(e);
     var valueType = e.target.localName;
     var dataId = e.target.dataset.id;
@@ -237,7 +235,7 @@ function readMore(products) {
 }
 
 function addToCart(products) {
-  var carts = cart.getCart();
+  var carts = JSON.parse(localStorage.getItem('cart'));
   var newCart;
   var allAddToCartBtn = document.querySelectorAll('.product-content-addcart');
   allAddToCartBtn.forEach(function (btn) {

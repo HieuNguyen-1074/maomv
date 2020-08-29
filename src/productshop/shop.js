@@ -1,8 +1,7 @@
 import Product from '../../product.js';
-import Cart from '/../../cart.js';
+let cart = JSON.parse(localStorage.getItem('cart'));
 
 const products = new Product();
-const cart = new Cart();
 
    function changeWidthElementToNumber(element){
           let width;
@@ -154,7 +153,7 @@ const cart = new Cart();
      }
  }
  function displayCarts(){
-   let carts = cart.getCart();
+   let carts = JSON.parse(localStorage.getItem('cart'));
    const elementCartsProduct = document.querySelector('.cart-products');
    const elementCartsSum = document.querySelector('.sum');
    const  elementSupQuanlityCart = document.getElementById('top-nav-quanlity-cart');
@@ -199,7 +198,7 @@ function removeCart(btns){
     
     
      allBtns.addEventListener('click',(e)=>{
-      let carts = cart.getCart();
+      let carts = JSON.parse(localStorage.getItem('cart'));
         console.log(e);
          let valueType = e.target.localName;
          let dataId = e.target.dataset.id;
@@ -296,7 +295,7 @@ function readMore(products){
    
 }
  function  addToCart(products){
-    let carts = cart.getCart();
+    let carts = JSON.parse(localStorage.getItem('cart'));
     let newCart ;
     const allAddToCartBtn = document.querySelectorAll('.product-content-addcart');
        allAddToCartBtn.forEach( btn => {

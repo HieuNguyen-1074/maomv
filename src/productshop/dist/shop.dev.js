@@ -54,24 +54,19 @@ function numberPageNewsProductDsiplay(number, elementContainer, product, product
     img.style.width = " ".concat(widthElementNewsProducts / number, "px");
   });
   elementNewProductBtnRight.addEventListener('click', function () {
-    console.log(allElementNewsProductImg.length);
+    var styleTransform = Math.abs(parseFloat(window.getComputedStyle(productMain).transform.split("(")[1].split(',')[4]));
     var x = Math.ceil(allElementNewsProductImg.length / number);
 
     if (count === x - 1) {
-      if (count % 2 === 0) {
-        productMain.style.transform = "translateX(-".concat(changeWidthElementToNumber(productMain) - widthElementNewsProducts * (count - 1), "px)");
-        count++;
-      } else {
-        productMain.style.transform = "translateX(-".concat(changeWidthElementToNumber(productMain) - widthElementNewsProducts * count, "px)");
-        count++;
-      }
+      productMain.style.transform = "translateX(-".concat(styleTransform + (changeWidthElementToNumber(productMain) - widthElementNewsProducts * count), "px)");
+      count++;
     } else if (count === x) {
-      console.log(count);
+      console.log('ss');
     } //  else if(allElementNewsProductImg.length===8){
     //     console.log('s')
     //  }
     else {
-        productMain.style.transform = "translateX(-".concat(widthElementNewsProducts * count, "px)");
+        productMain.style.transform = "translateX(-".concat(styleTransform + widthElementNewsProducts, "px)");
         count++;
       }
 
@@ -98,7 +93,6 @@ function pageNewsProductDsiplay() {
   var elementKinhDiProducts = elementKinhDiContainer.querySelector('.kinhdi-products');
   var elementKinhDiProductsMain = elementKinhDiContainer.querySelector('.kinhdi-products-main');
   var widthScreen = document.body.clientWidth;
-  console.log(widthScreen);
 
   if (widthScreen <= 1153 && widthScreen > 870) {
     numberPageNewsProductDsiplay(6, elementNewsContainer, elementNewsProducts, elementNewsProductsMain);

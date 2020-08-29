@@ -68,27 +68,21 @@ const products = new Product();
             img.style.width =` ${(widthElementNewsProducts/number)}px`;
         });
         elementNewProductBtnRight.addEventListener('click',()=>{
-           console.log(allElementNewsProductImg.length)
+         let styleTransform = Math.abs(parseFloat(window.getComputedStyle(productMain).transform.split("(")[1].split(',')[4]));
            var x = Math.ceil((allElementNewsProductImg.length)/number);
-          if(count === x-1) {
-             if(count%2===0){
-               productMain.style.transform = `translateX(-${changeWidthElementToNumber(productMain) - widthElementNewsProducts*(count-1) }px)`;
+          if(count === x - 1 ) {
+               productMain.style.transform = `translateX(-${ styleTransform + (changeWidthElementToNumber(productMain) - widthElementNewsProducts*(count)) }px)`;
+            
                count++;
-             }
-             else{
-               productMain.style.transform = `translateX(-${changeWidthElementToNumber(productMain) - widthElementNewsProducts*(count) }px)`;
-               count++;
-             }
-               
           }
           else if (count === x){
-             console.log(count)
+             console.log('ss')
           }
          //  else if(allElementNewsProductImg.length===8){
          //     console.log('s')
          //  }
           else{
-            productMain.style.transform = `translateX(-${ widthElementNewsProducts*count }px)`;
+            productMain.style.transform = `translateX(-${ styleTransform +  widthElementNewsProducts }px)`;
             count++;
           }
           console.log(count)
@@ -121,7 +115,7 @@ const products = new Product();
 
     
      let widthScreen = document.body.clientWidth;
-    console.log(widthScreen)
+
 
      if(widthScreen <=1153 && widthScreen>870){
         numberPageNewsProductDsiplay(6,elementNewsContainer,elementNewsProducts,elementNewsProductsMain);

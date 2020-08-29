@@ -89,7 +89,7 @@ function checkUsers(users) {
       elementPasswordAlert.innerHTML = '';
       elementUserAlert.innerHTML = '';
       Cookies.set('name', "".concat(s.name));
-      elementLoginForm.setAttribute("action", "../productshop/shop.html");
+      elementLoginForm.setAttribute("action", "../../src/productshop/shop.html");
     }
   });
 }

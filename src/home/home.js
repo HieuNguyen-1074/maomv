@@ -74,7 +74,7 @@ function checkUsers(users){
         elementPasswordAlert.innerHTML = '';
         elementUserAlert.innerHTML = '';
         Cookies.set('name', `${s.name}`);
-        elementLoginForm.setAttribute("action","/src/productshop/shop.html");
+        elementLoginForm.setAttribute("action","../productshop/shop.html");
        }
   })
    
